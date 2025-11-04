@@ -1,3 +1,4 @@
-/backend/node_modules
-/backend/.env
-/backend/package-lock.json
+# ...existing code...
+**/node_modules/
+**/.env
+**/package-lock.json
