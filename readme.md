@@ -1,6 +1,3 @@
-   - Postman Collection or cURL examples for all API endpoints.
-
-
 # Image Search App
 
 ## Setup Instructions
