@@ -20,6 +20,9 @@ app.use(cors(
         credentials: true
     }
 ));
+// app.use(cors());
+
+// session middleware
 app.use(session({
     secret: process.env.PASSPORT_SESSION_SECRET,
     resave: false,

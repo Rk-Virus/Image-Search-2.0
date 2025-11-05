@@ -44,10 +44,10 @@ main h2 {
 }
 
 #imageGallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 19.55vh 0;
+    /* display: flex; */
+    /* flex-wrap: wrap;
+    justify-content: center; */
+    margin: 10vh 8vw;
 }
 
 img {
