@@ -1,4 +1,4 @@
-# Image Search App
+# Image Search 2.0
 
 ## Setup Instructions
 
