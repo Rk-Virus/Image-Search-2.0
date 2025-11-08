@@ -23,12 +23,13 @@ const Home = () => {
 
   // Replace with your Vite env var: VITE_UNSPLASH_KEY
   const UNSPLASH_KEY = import.meta.env.VITE_UNSPLASH_KEY
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
   const PER_PAGE = 8
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/api/auth/login/success', {
+        const response = await axios.get(API_BASE_URL+'/api/auth/login/success', {
           withCredentials: true,
         })
         if (response.status === 200 && response.data) {
@@ -45,7 +46,7 @@ const Home = () => {
 
     const getTopSearches = async () => {
       try {
-        const res = await axios.get('http://localhost:5001/api/user/top-searches')
+        const res = await axios.get(API_BASE_URL+'/api/user/top-searches')
         setTopSearches(res.data.data || [])
       } catch (err) {
         console.error('Error fetching top searches:', err)
@@ -62,7 +63,7 @@ const Home = () => {
 
     const getUserHistory = async () => {
       try {
-        const res = await axios.get('http://localhost:5001/api/user/history', {
+        const res = await axios.get(API_BASE_URL+'/api/user/history', {
           withCredentials: true,
         })
         setHistory(res.data.data || [])
@@ -81,7 +82,7 @@ const Home = () => {
     setError('')
     try {
       // add search to db
-      await axios.post('http://localhost:5001/api/user/add-search', { term: searchTerm }, {
+      await axios.post(API_BASE_URL+'/api/user/add-search', { term: searchTerm }, {
         withCredentials: true,
       })
 
