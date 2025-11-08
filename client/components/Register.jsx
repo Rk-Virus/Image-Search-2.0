@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
+
 export default function Register() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -23,7 +25,7 @@ export default function Register() {
     e.preventDefault();
     console.log('Submitting form data:', formData);
     try {
-      const res = await axios.post('http://localhost:5001/api/auth/register/', formData, {
+      const res = await axios.post(API_BASE_URL+'/api/auth/register/', formData, {
         withCredentials: true,
       });
 
@@ -42,17 +44,17 @@ export default function Register() {
   const handleGoogleLogin = (e) => {
     e.preventDefault();
     // Directly redirect to the server's Google auth endpoint
-    window.location.href = 'http://localhost:5001/api/auth/google';
+    window.location.href = API_BASE_URL+'/api/auth/google';
   };
 
   const handleGithubLogin = (e) => {
     e.preventDefault();
-    window.location.href = 'http://localhost:5001/api/auth/github';
+    window.location.href = API_BASE_URL+'/api/auth/github';
   };
 
   const handleFacebookLogin = (e) => {
     e.preventDefault();
-    window.location.href = 'http://localhost:5001/api/auth/facebook';
+    window.location.href = API_BASE_URL+'/api/auth/facebook';
   };
 
   return (
